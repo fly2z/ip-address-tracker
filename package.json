@@ -1,0 +1,15 @@
+{
+	"name": "ipaddresstracker",
+	"version": "1.0.0",
+	"description": "Frontend Mentor IP Address Tracker",
+	"main": "script.js",
+	"scripts": {
+		"build": "npx tailwindcss -i ./style.css -o ./dist/style.css",
+		"dev": "npx tailwindcss -i ./style.css -o ./dist/style.css --watch"
+	},
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"tailwindcss": "^3.3.2"
+	}
+}

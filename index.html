@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Frontend Mentor | IP Address Tracker</title>
+
+	<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+		integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+	<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+		integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+	<link rel="stylesheet" href="./dist/style.css" />
+	<style>
+		@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+
+		body {
+			font-family: "Rubik";
+		}
+	</style>
+
+
+</head>
+
+<body>
+	<div class="absolute bg-red-200 flex flex-col w-full h-screen top-0">
+		<div class="">
+			<img class="hidden sm:flex w-full h-[320px] z-0" src="images/pattern-bg-desktop.png" alt="">
+			<img class="flex sm:hidden w-full h-[320px] z-0" src="images/pattern-bg-mobile.png" alt="">
+		</div>
+		<div id="map" class="flex h-full w-full z-10"></div>
+	</div>
+	<div class="flex flex-col w-full px-6 items-center relative">
+		<div class="flex flex-col w-full mt-8 items-center">
+			<div class="font-semibold text-[30px] tracking-wider text-white">IP Address Tracker</div>
+			<form id="searchForm" class="flex flex-row w-full max-w-[600px] h-[60px] bg-white rounded-2xl mt-8">
+				<input id="ipInput" class="ml-6 my-2 w-full text-[18px] outline-none"
+					placeholder="Search for any IP address or domain">
+
+				<button id="submit"
+					class="flex rounded-r-2xl w-[70px] h-full items-center justify-center bg-black hover:bg-gray-800 transition-colors duration-500"><img
+						src="images/icon-arrow.svg" alt=""></button>
+			</form>
+		</div>
+		<div
+			class="z-20 flex flex-col sm:flex-row items-center mt-8 sm:mt-16 gap-2 sm:gap-6 sm:divide-x-2 bg-white rounded-2xl w-full max-w-[1200px] sm:h-[190px] py-10 px-6">
+			<div class="basis-1/4 flex flex-col pl-6 h-full w-full items-center sm:items-start">
+				<div class="uppercase text-gray-500 tracking-wider text-[13px] font-semibold">IP Address</div>
+				<div class="mt-1 text-very-dark-gray text-[23px] font-semibold" id="ip"></div>
+			</div>
+			<div class="basis-1/4 pt-4 sm:pt-0 flex flex-col pl-6 h-full w-full items-center sm:items-start">
+				<div class="uppercase text-gray-500 tracking-wider text-[13px] font-semibold">Location</div>
+				<div class="mt-1 text-very-dark-gray text-[23px] font-semibold" id="location"></div>
+			</div>
+			<div class="basis-1/4 pt-4 sm:pt-0 flex flex-col pl-6 h-full w-full items-center sm:items-start">
+				<div class="uppercase text-gray-500 tracking-wider text-[13px] font-semibold">Timezone</div>
+				<div class="mt-1 text-very-dark-gray text-[23px] font-semibold" id="timezone"></div>
+			</div>
+			<div class="basis-1/4 pt-4 sm:pt-0 flex flex-col pl-6 h-full w-full items-center sm:items-start">
+				<div class="uppercase text-gray-500 tracking-wider text-[13px] font-semibold">ISP</div>
+				<div class="mt-1 text-very-dark-gray text-[23px] font-semibold truncate" id="isp"></div>
+			</div>
+		</div>
+	</div>
+	<script src="script.js"></script>
+</body>
+
+</html>
